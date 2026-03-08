@@ -1,5 +1,0 @@
-#EXTM3U 
-#EXT-X-VERSION:3
-#EXTVLCOPT:http-user-agent="tv/9.6 (Linux;Android 7.1.2) ExoPlayerLib/2.8.4"
-#EXT-X-STREAM-INF:BANDWIDTH=684100,RESOLUTION=640x360,NAME="360p"
-http://live.unregister.xyz/live/eds/rcti_fta/live_fta/rcti_fta-avc1_1537200=6-mp4a_64000_eng=2.m3u8

@@ -1,5 +1,0 @@
-#EXTM3U 
-#EXT-X-VERSION:3
-#EXTVLCOPT:http-user-agent="tv/9.6 (Linux;Android 7.1.2) ExoPlayerLib/2.8.4"
-#EXT-X-STREAM-INF:BANDWIDTH=684100,RESOLUTION=960x540,NAME="540p"
-http://live.unregister.xyz/live/eds/mnctv_fta/live_fta/mnctv_fta-avc1_768000=7-mp4a_64000_eng=2.m3u8
