@@ -1,5 +1,5 @@
 // Sets the cache name
-const CACHE_NAME = 'rbt-radio-v1.0';
+const CACHE_NAME = 'rbt-radio-v1.1';
 
 // List of files to be cached
 const urlsToCache = [
@@ -37,4 +37,3 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
-
