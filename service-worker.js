@@ -4,9 +4,9 @@ const CACHE_NAME = 'rbt-radio-v1.0';
 // List of files to be cached
 const urlsToCache = [
   '/',
-  '/live',
-  '/css/rbtlive.css',
-  '/js/combro.js',
+  '/index.html',
+  '/css/side2.css',
+  '/js/new.js',
   'https://cdn.bintangtenggarafm.com/img/f69c7be1aa497aaa87f40d2306c4b3578.png',
   // Add other resources you want to cache here
 ];
@@ -37,3 +37,4 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
+
