@@ -7,7 +7,7 @@
        
 		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" media="all" /><!-- playlist scroll -->
 		<link id="mrp-css" rel="stylesheet" type="text/css" href="css/side2.css" />
-       
+        <link rel="manifest" href="/manifest.json">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/new.js"></script>			
         <script type="text/javascript">
@@ -151,6 +151,17 @@
             <div class="mrp-playlist-item playlist3" data-type="shoutcast" data-radio-url="https://sv3.stri.my.id:5423/;" data-radio-title="Bintang Tenggara 64k" data-radio-thumb="https://lastfm.freetls.fastly.net/i/u/300x300/f69c7be1aa497aaa87f40d2306c4c355.png"></div>
 
         </div>    
-
+        <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then(function(registration) {
+                console.log('Service Worker registrado com sucesso:', registration);
+              }, function(err) {
+                console.log('Falha ao registrar o Service Worker:', err);
+              });
+          });
+        }
+      </script>	
 	</body>
 </html>
