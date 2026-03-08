@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta http-equiv="CACHE-CONTROL" CONTENT="NO-CACHE">
+		<title>Alternate - Modern Radio Player with Playlist</title>
+       
+		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" media="all" /><!-- playlist scroll -->
+	    <link id="mrp-css" rel="stylesheet" type="text/css" href="css/alternate.css" />
+        
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/rbt_new.js"></script>			
+        <script type="text/javascript">
+
+            var player;
+            jQuery(document).ready(function($){
+                
+                var settings = {
+                    instanceName:"alternate",
+                    sourcePath:"",
+                    activePlaylist:".playlist1",
+                    volume:0.7,
+                    autoPlay:true,
+                    useScroll:false,
+                    useScroll:true,
+                    scrollOrientation:"vertical",
+                    scrollTheme:"minimal-dark",
+                    facebookAppId:"644413448983338",
+                    lastPlayedInterval:10000,
+                    createHistoryList:true,
+                    getHistoryArtwork:true,
+                    defaultHistoryArtwork: "data/default_artwork/star_small.png",
+                    getPlayerArtwork:true,
+                    defaultPlayerArtwork: "data/default_artwork/star.png",
+                    enableCors:false,
+                    cors: "https://cors.mediastreaming.it/",
+
+                    createRadioList:true,
+                };
+
+                $("#mrp-wrapper").mrp(settings);
+
+            });
+
+        </script>
+        
+	</head>
+	<body>
+
+        <!-- player code -->   
+        <div id="mrp-wrapper">
+
+       		<div class="mrp-player-holder">
+
+                <div class="mrp-player-thumb-wrap">
+                    <div class="mrp-player-thumb1 mrp-thumb-hidden"></div>
+                    <div class="mrp-player-thumb2 mrp-thumb-hidden"></div>
+                </div>
+
+                <div class="mrp-playback-toggle mrp-contr-btn">
+                    <div class="mrp-pause-icon">
+                        <svg viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16zm-112 0v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16z"></path></svg>
+                    </div>
+                    <div class="mrp-play-icon">
+                        <svg viewBox="0 0 512 512"><path d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"></path></svg>
+                    </div>    
+                </div>
+
+                <div class="mrp-share-wrapper mrp-contr-btn">
+
+                    <div class="mrp-share-holder">
+                        <div class="mrp-share-item mrp-contr-btn" data-type="tumblr" data-tooltip="Share On Tumblr">
+                            <svg viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-82.3 364.2c-8.5 9.1-31.2 19.8-60.9 19.8-75.5 0-91.9-55.5-91.9-87.9v-90h-29.7c-3.4 0-6.2-2.8-6.2-6.2v-42.5c0-4.5 2.8-8.5 7.1-10 38.8-13.7 50.9-47.5 52.7-73.2.5-6.9 4.1-10.2 10-10.2h44.3c3.4 0 6.2 2.8 6.2 6.2v72h51.9c3.4 0 6.2 2.8 6.2 6.2v51.1c0 3.4-2.8 6.2-6.2 6.2h-52.1V321c0 21.4 14.8 33.5 42.5 22.4 3-1.2 5.6-2 8-1.4 2.2.5 3.6 2.1 4.6 4.9l13.8 40.2c1 3.2 2 6.7-.3 9.1z"></path></svg>
+                        </div>
+                        <div class="mrp-share-item mrp-contr-btn" data-type="twitter" data-tooltip="Share On Twitter">
+                            <svg viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></path></svg>
+                        </div>
+                        <div class="mrp-share-item mrp-contr-btn" data-type="facebook" data-tooltip="Share On Facebook">
+                            <svg viewBox="0 0 448 512"><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+                        </div>
+                        <div class="mrp-share-item mrp-contr-btn" data-type="whatsapp" data-tooltip="Share On WhatsApp">
+                            <svg viewBox="0 0 448 512"><path d="M224 122.8c-72.7 0-131.8 59.1-131.9 131.8 0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7zm77.5 188.4c-3.3 9.3-19.1 17.7-26.7 18.8-12.6 1.9-22.4.9-47.5-9.9-39.7-17.2-65.7-57.2-67.7-59.8-2-2.6-16.2-21.5-16.2-41s10.2-29.1 13.9-33.1c3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6.1 2.4.1 5.7-.9 8.9 6.8 3.3 7.9 11.2 27.4 12.2 29.4s1.7 4.3.3 6.9c-7.6 15.2-15.7 14.6-11.6 21.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2 3.6 1.3 23.1 10.9 27.1 12.9s6.6 3 7.6 4.6c.9 1.9.9 9.9-2.4 19.1zM400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM223.9 413.2c-26.6 0-52.7-6.7-75.8-19.3L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5z"></path></svg>
+                        </div>
+                    </div> 
+
+                    <svg viewBox="0 0 448 512"><path d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"></path></svg>
+
+                </div> 
+
+                <div class="mrp-popup-toggle mrp-contr-btn" data-tooltip="Expand">
+                    <svg viewBox="0 0 215.35 215.35" style="enable-background:new 0 0 215.35 215.35;" xml:space="preserve"><g>  <path d="M7.5,65.088c4.143,0,7.5-3.358,7.5-7.5V25.61l48.305,48.295c1.465,1.464,3.384,2.196,5.303,2.196      c1.92,0,3.84-0.732,5.304-2.197c2.929-2.929,2.929-7.678-0.001-10.606L25.604,15.002h31.985c4.142,0,7.5-3.358,7.5-7.5      c0-4.142-3.357-7.5-7.5-7.5H7.5c-4.143,0-7.5,3.358-7.5,7.5v50.087C0,61.73,3.357,65.088,7.5,65.088z"/>    <path d="M207.85,150.262c-4.143,0-7.5,3.358-7.5,7.5v31.979l-49.792-49.792c-2.93-2.929-7.678-2.929-10.607,0      c-2.929,2.929-2.929,7.678,0,10.606l49.791,49.791h-31.977c-4.143,0-7.5,3.358-7.5,7.5c0,4.142,3.357,7.5,7.5,7.5h50.086        c4.143,0,7.5-3.358,7.5-7.5v-50.084C215.35,153.62,211.992,150.262,207.85,150.262z"/> <path d="M64.792,139.949L15.005,189.74v-31.978c0-4.142-3.357-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v50.086c0,4.142,3.357,7.5,7.5,7.5        h50.084c4.142,0,7.5-3.358,7.5-7.5s-3.357-7.5-7.5-7.5H25.611l49.788-49.793c2.929-2.929,2.929-7.678-0.001-10.607      C72.471,137.02,67.722,137.02,64.792,139.949z"/> <path d="M207.85,0.002h-50.086c-4.143,0-7.5,3.358-7.5,7.5c0,4.142,3.357,7.5,7.5,7.5h31.979l-48.298,48.301       c-2.929,2.929-2.929,7.678,0.001,10.607c1.464,1.464,3.384,2.196,5.303,2.196c1.919,0,3.839-0.733,5.304-2.197l48.298-48.301v31.98      c0,4.142,3.357,7.5,7.5,7.5c4.143,0,7.5-3.358,7.5-7.5V7.502C215.35,3.359,211.992,0.002,207.85,0.002z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                </div> 
+
+                <div class="mrp-volume-toggle">
+
+                    <div class="mrp-volume-btn">
+                        <div class="mrp-volume-icon mrp-contr-btn" data-tooltip="Volume">
+                            <svg viewBox="0 0 576 512"><path d="M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zm233.32-51.08c-11.17-7.33-26.18-4.24-33.51 6.95-7.34 11.17-4.22 26.18 6.95 33.51 66.27 43.49 105.82 116.6 105.82 195.58 0 78.98-39.55 152.09-105.82 195.58-11.17 7.32-14.29 22.34-6.95 33.5 7.04 10.71 21.93 14.56 33.51 6.95C528.27 439.58 576 351.33 576 256S528.27 72.43 448.35 19.97zM480 256c0-63.53-32.06-121.94-85.77-156.24-11.19-7.14-26.03-3.82-33.12 7.46s-3.78 26.21 7.41 33.36C408.27 165.97 432 209.11 432 256s-23.73 90.03-63.48 115.42c-11.19 7.14-14.5 22.07-7.41 33.36 6.51 10.36 21.12 15.14 33.12 7.46C447.94 377.94 480 319.54 480 256zm-141.77-76.87c-11.58-6.33-26.19-2.16-32.61 9.45-6.39 11.61-2.16 26.2 9.45 32.61C327.98 228.28 336 241.63 336 256c0 14.38-8.02 27.72-20.92 34.81-11.61 6.41-15.84 21-9.45 32.61 6.43 11.66 21.05 15.8 32.61 9.45 28.23-15.55 45.77-45 45.77-76.88s-17.54-61.32-45.78-76.86z"></path></svg>
+                        </div>  
+                        <div class="mrp-mute-icon mrp-contr-btn" data-tooltip="Volume">
+                            <svg viewBox="0 0 640 512"><path d="M633.82 458.1l-69-53.33C592.42 360.8 608 309.68 608 256c0-95.33-47.73-183.58-127.65-236.03-11.17-7.33-26.18-4.24-33.51 6.95-7.34 11.17-4.22 26.18 6.95 33.51 66.27 43.49 105.82 116.6 105.82 195.58 0 42.78-11.96 83.59-33.22 119.06l-38.12-29.46C503.49 318.68 512 288.06 512 256c0-63.09-32.06-122.09-85.77-156.16-11.19-7.09-26.03-3.8-33.12 7.41-7.09 11.2-3.78 26.03 7.41 33.13C440.27 165.59 464 209.44 464 256c0 21.21-5.03 41.57-14.2 59.88l-39.56-30.58c3.38-9.35 5.76-19.07 5.76-29.3 0-31.88-17.53-61.33-45.77-76.88-11.58-6.33-26.19-2.16-32.61 9.45-6.39 11.61-2.16 26.2 9.45 32.61 11.76 6.46 19.12 18.18 20.4 31.06L288 190.82V88.02c0-21.46-25.96-31.98-40.97-16.97l-49.71 49.7L45.47 3.37C38.49-2.05 28.43-.8 23.01 6.18L3.37 31.45C-2.05 38.42-.8 48.47 6.18 53.9l588.36 454.73c6.98 5.43 17.03 4.17 22.46-2.81l19.64-25.27c5.41-6.97 4.16-17.02-2.82-22.45zM32 184v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V352.6L43.76 163.84C36.86 168.05 32 175.32 32 184z"></path></svg>
+                        </div>  
+                    </div>  
+
+                    <div class="mrp-volume-seekbar" data-is-vertical>
+                        <div class="mrp-volume-bg"></div>
+                        <div class="mrp-volume-level"></div>
+                    </div>
+                </div>
+
+                <div class="mrp-preloader"></div>
+
+            </div>      
+
+            <div class="mrp-info">
+                
+                <div class="mrp-player-artist"></div>
+                <div class="mrp-player-title"></div>
+                
+            </div>
+
+            <div class="mrp-playlist-holder">
+
+                <div class="mrp-playlist-bar">
+                    <div class="mrp-history-title mrp-title-active">History</div>
+                    <div class="mrp-station-title">Stations</div>
+                </div>
+
+                <div class="mrp-history-inner">
+                    <div class="mrp-history-content"></div>
+                </div>
+
+                <div class="mrp-playlist-inner">
+                    <div class="mrp-playlist-content"></div>
+                </div>
+
+            </div>
+
+            <div class="mrp-tooltip"></div>  
+
+        </div>  
+
+        <!-- PLAYLIST LIST -->
+        <div id="mrp-playlist-list">
+
+            <div class="mrp-playlist-item playlist1" data-type="shoutcast" data-radio-url="https://b1.alhastream.com:3310/;" data-radio-title="Bintang Tenggara 64k" data-version="1" data-radio-thumb="data/stations/100px-Rbtfm.jpg"></div>
+
+            <div class="mrp-playlist-item playlist2" data-type="icecast" data-radio-url="https://asv.alhastream.com:3350/rbtfm" data-radio-title="Bintang Tenggara 48k" data-radio-thumb="https://lastfm.freetls.fastly.net/i/u/300x300/f69c7be1aa497aaa87f40d2306c4c355.png"></div>
+
+            <div class="mrp-playlist-item playlist3" data-type="shoutcast" data-radio-url="https://simbacast.herokuapp.com/?q=http://live.radiotawangalun.com:8060/;" data-radio-title="RSTA" data-version="1" data-radio-thumb="https://streaming.mbahnunungonline.net/img/tawangalun.jpg"></div>
+
+            <div class="mrp-playlist-item playlist4" data-type="shoutcast" data-radio-url="https://sj128.mbahnunungonline.net/;" data-radio-title="Smooth Jazz" data-radio-thumb="data/stations/sj-circle-logo.png"></div>
+
+            <div class="mrp-playlist-item playlist5" data-type="shoutcast" data-radio-url="https://simbacast.herokuapp.com/?q=http://stream3.radiocenter.si:8068/;" data-radio-title="HitRadio Center" data-version="1" data-radio-thumb="data/stations/HitradioCenter.jpg"></div>
+
+            <div class="mrp-playlist-item playlist6" data-type="shoutcast" data-radio-url="https://simbacast.herokuapp.com/?q=http://192.99.8.170:8098/;" data-radio-title="Live Streaming Radiocast" data-version="1" data-radio-thumb="data/stations/Live Streaming Radiocast.jpg"></div>
+
+            <div class="mrp-playlist-item playlist7" data-type="shoutcast" data-radio-url="https://simbacast.herokuapp.com/?q=http://87.98.216.129:4638/;" data-radio-title="Hits Top40" data-version="1" data-radio-thumb="data/stations/ustop40.jpg"></div>
+            
+            <div class="mrp-playlist-item playlist8" data-type="icecast" data-radio-url="https://s5.alhastream.com/radio/8490/radio" data-radio-title="Nagaswara FM" data-radio-thumb="data/stations/nsr.png"></div>
+
+        </div>   
+
+	</body>
+</html>
