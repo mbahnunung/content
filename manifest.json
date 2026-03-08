@@ -1,7 +1,7 @@
 {
   "name": "Bintang Tenggara",
-  "short_name": "RBT FM",
-  "start_url": "/live",
+  "short_name": "RBTFM",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
@@ -13,3 +13,4 @@
     }
   ]
 }
+
