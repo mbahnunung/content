@@ -8,17 +8,14 @@ a{
 	text-decoration: none; 
 }
 body,html{
-	background-color: #d6d6d6;
+	 background-color: transparent;
 }
-
-
-
 
 #mrp-wrapper{
 	position:relative;
 	font-family: Arial, Helvetica, sans-serif;
 	max-width:640px;
-	margin: 50px auto;
+	margin: 0px auto;
 	box-shadow: 1px 1px 15px #949494;
 	display: flex;
 }
