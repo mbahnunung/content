@@ -167,7 +167,7 @@ var mrpjq = jQuery;
           window.playlistScrollLoading = !0;
           var h = document.createElement("script");
           h.type = "text/javascript";
-          h.src = MRPUtils.qualifyURL(Xa + "https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js");
+          h.src = MRPUtils.qualifyURL(Xa + "https://warningfm.github.io/v3/js/jquery.mCustomScrollbar.concat.min.js");
           h.onload = h.onreadystatechange = function () {
             this.readyState && "complete" != this.readyState || (oa(a), window.playlistScrollLoading = !1)
           };
