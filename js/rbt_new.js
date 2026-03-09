@@ -1,23 +1,14 @@
-jQuery(document).ready(function($){
-    var settings = {
-    instanceName:"horizontal",
-    sourcePath:"",
-    activePlaylist:".playlist1",
-    volume:0.95,
-    useScroll:true,
-    scrollOrientation:"horizontal",
-    scrollTheme:"minimal-dark",
-    facebookAppId:"",
-    lastPlayedInterval:20000,
-    createHistoryList:true,
-    getHistoryArtwork:true,
-    defaultPlayerArtwork: "",
-    defaultHistoryArtwork: "",
-    getPlayerArtwork:true,
-    createRadioList:false,
-    };
-    $("#mrp-wrapper").mrp(settings);
-    });
+/*
+The MIT License (MIT) 
+PARAN JARE RIKO
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 
 var mrpjq = jQuery;
 (function (d) {
