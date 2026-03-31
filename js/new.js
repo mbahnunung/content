@@ -902,7 +902,7 @@ var mrpjq = jQuery;
       useKeyboardNavigationForPlayback: !1,
       scrollOrientation: "vertical",
       scrollTheme: "minimal",
-      cors: "https://cors-anywhere.herokuapp.com/",
+      cors: "https://cors.mbahnunungonline.net/",
       getPlayerArtwork: !0,
       getHistoryArtwork: !1,
       createHistoryList: !0,
